@@ -52,16 +52,17 @@ function startPlayerGuessGame(){
 function treatPlayerInput(){
     let playerInputElement = document.getElementById("player_input");
     let entryNumber = parseInt(playerInputElement.value);
-    let messageDiv = document.getElementById("message1");
+    let gameOneMessageDiv = document.getElementById("message1");
 
     if (entryNumber < computerGeneratedNumber){
-        messageDiv.innerText = "No, your guessed number is smaller";
+        gameOneMessageDiv.innerText = "No, your guessed number is smaller";
     }
     else if (entryNumber > computerGeneratedNumber){
-        messageDiv.innerText = "No, your guessed number is greater";
+        gameOneMessageDiv.innerText = "No, your guessed number is greater";
     }
     else {
-        messageDiv.innerText = "Congrats, You made the right guess " + computerGeneratedNumber;
+        gameOneMessageDiv.style.color = "#00ff00";
+        gameOneMessageDiv.innerText = "Congrats, You made the right guess " + computerGeneratedNumber;
         gameOneRestartButton.style.display = "";
         playerInputElement.value = "";
     }
@@ -73,6 +74,7 @@ function startComputerGuessGame(){
     hide(gameSelection);
     gameTwoRestartButton.style.display = "none";
     gameTwoMessageDiv.innerText = "" + computerGuessNumber;
+    gameTwoMessageDiv.style.color = "white";
 }
 
 function computerGuess_isSmaller(){
@@ -88,6 +90,7 @@ function computerGuess_isGreater(){
 }
 
 function numberFound(){
+    gameTwoMessageDiv.style.color = "#00ff00";
     gameTwoMessageDiv.innerText = "Congrats, You found " + computerGuessNumber;
     gameTwoRestartButton.style.display = "";
 }
