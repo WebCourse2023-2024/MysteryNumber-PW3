@@ -71,6 +71,8 @@ function main(){
     let tryButton = document.getElementById("try_button");
     tryButton.addEventListener("click", treatPlayerInput);
 
+    gameOneRestartButton.addEventListener("click", new_game);
+
     new_game();
 }
 
