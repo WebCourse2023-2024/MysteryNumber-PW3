@@ -17,7 +17,7 @@ function show(element) {
 function hide(element) {
     element.style.display = "none";
 }
-function new_game() {
+function newGame() {
     show(gameSelection);
     hide(gameOneDiv);
     hide(gameTwoDiv);
@@ -71,9 +71,9 @@ function main(){
     let tryButton = document.getElementById("try_button");
     tryButton.addEventListener("click", treatPlayerInput);
 
-    gameOneRestartButton.addEventListener("click", new_game);
+    gameOneRestartButton.addEventListener("click", newGame);
 
-    new_game();
+    newGame();
 }
 
 document.addEventListener("DOMContentLoaded", main);
