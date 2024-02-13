@@ -1,4 +1,4 @@
-let computerNumber = 0;
+let computerGeneratedNumber = 0;
 let gameSelection;
 let gameOneDiv;
 let gameTwoDiv;
@@ -43,7 +43,7 @@ function displayGameTwo(){
 }
 
 function startPlayerGuessGame(){
-    computerNumber = Math.floor(Math.random() * 100) + 1;
+    computerGeneratedNumber = Math.floor(Math.random() * 100) + 1;
     gameOneRestartButton.style.display = "none";
     displayGameOne();
     hide(gameSelection);
@@ -54,14 +54,14 @@ function treatPlayerInput(){
     let entryNumber = parseInt(playerInputElement.value);
     let messageDiv = document.getElementById("message1");
 
-    if (entryNumber < computerNumber){
+    if (entryNumber < computerGeneratedNumber){
         messageDiv.innerText = "Non c'est plus grand";
     }
-    else if (entryNumber > computerNumber){
+    else if (entryNumber > computerGeneratedNumber){
         messageDiv.innerText = "Non c'est plus petit";
     }
     else {
-        messageDiv.innerText = "Bravo, vous avez trouvé " + computerNumber;
+        messageDiv.innerText = "Bravo, vous avez trouvé " + computerGeneratedNumber;
         gameOneRestartButton.style.display = "";
         playerInputElement.value = "";
     }
@@ -77,14 +77,19 @@ function startComputerGuessGame(){
 
 function computerGuess_isSmaller(){
     minValue = computerGuessNumber;
-    computerGuessNumber = (minValue + maxValue) / 2;
+    computerGuessNumber = Math.floor((minValue + maxValue) / 2);
     gameTwoMessageDiv.innerText = "" + computerGuessNumber;
 }
 
 function computerGuess_isGreater(){
-    maxValue = computerNumber;
-    computerNumber = (minValue + maxValue) / 2;
+    maxValue = computerGuessNumber;
+    computerGuessNumber = Math.floor((minValue + maxValue) / 2);
     gameTwoMessageDiv.innerText = "" + computerGuessNumber;
+}
+
+function numberFound(){
+    gameTwoMessageDiv.innerText = "Congrats, You found " + computerGuessNumber;
+    gameTwoRestartButton.style.display = "";
 }
 
 
@@ -105,6 +110,10 @@ function main(){
 
     let greaterButton = document.getElementById("bigger_button");
     greaterButton.addEventListener("click", computerGuess_isGreater)
+
+    let numberFoundButton = document.getElementById("found_button");
+    numberFoundButton.addEventListener("click", numberFound);
+    gameTwoRestartButton.addEventListener("click", newGame);
 
     newGame();
 }
