@@ -55,13 +55,13 @@ function treatPlayerInput(){
     let messageDiv = document.getElementById("message1");
 
     if (entryNumber < computerGeneratedNumber){
-        messageDiv.innerText = "Non c'est plus grand";
+        messageDiv.innerText = "No, your guessed number is smaller";
     }
     else if (entryNumber > computerGeneratedNumber){
-        messageDiv.innerText = "Non c'est plus petit";
+        messageDiv.innerText = "No, your guessed number is greater";
     }
     else {
-        messageDiv.innerText = "Bravo, vous avez trouvé " + computerGeneratedNumber;
+        messageDiv.innerText = "Congrats, You made the right guess " + computerGeneratedNumber;
         gameOneRestartButton.style.display = "";
         playerInputElement.value = "";
     }
