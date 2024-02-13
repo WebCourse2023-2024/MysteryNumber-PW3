@@ -1,0 +1,36 @@
+body {
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* White text color */
+    font-family: 'Arial', sans-serif; /* Use a suitable font */
+}
+
+#game_selection, #game1, #game2 {
+    background-color: #1e1e1e; /* Darker background for game sections */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #35424a; /* Dark blue button background color */
+    color: #ffffff; /* White text color for buttons */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+input {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+label {
+    color: #c0c0c0; /* Light gray label text color */
+}
+
+#message1, #message2 {
+    color: #008080; /* Orange text color for messages */
+    margin: 10px;
+}
