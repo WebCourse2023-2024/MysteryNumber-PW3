@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du nombre mystère</title>
+    <script src="script.js"></script>
+<!--    <style>
+        #game_selection, #game1, #game2 {
+            display: none;
+        }
+    </style>-->
 </head>
 <body>
+    <div id="game_selection">
+        <button id="start_game1">Commencer une partie (jeu 1)</button>
+        <button id="start_game2">Commencer une partie (jeu 2)</button>
+    </div>
 
+    <div id="game1">
+        <label for="player_input">Enter your guess</label>
+        <div>
+            <input type="text" id="player_input">
+            <button id="try_button">Essayer</button>
+        </div>
+        <div id="message1"></div>
+        <button id="restart_button1">Recommencer</button>
+    </div>
+
+    <div id="game2">
+        <div id="message2" style="height: 30px;"></div>
+        <button id="smaller_button">Plus petit</button>
+        <button id="bigger_button">Plus grand</button>
+        <button id="found_button">Trouvé</button>
+        <button id="restart_button2">Recommencer</button>
+    </div>
 </body>
 </html>
