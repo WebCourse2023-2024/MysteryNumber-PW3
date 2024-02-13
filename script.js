@@ -81,6 +81,11 @@ function computerGuess_isSmaller(){
     gameTwoMessageDiv.innerText = "" + computerGuessNumber;
 }
 
+function computerGuess_isGreater(){
+    maxValue = computerNumber;
+    computerNumber = (minValue + maxValue) / 2;
+    gameTwoMessageDiv.innerText = "" + computerGuessNumber;
+}
 
 
 function main(){
@@ -97,6 +102,9 @@ function main(){
     //game two functionalities
     let smallerButton = document.getElementById("smaller_button");
     smallerButton.addEventListener("click", computerGuess_isSmaller)
+
+    let greaterButton = document.getElementById("bigger_button");
+    greaterButton.addEventListener("click", computerGuess_isGreater)
 
     newGame();
 }
