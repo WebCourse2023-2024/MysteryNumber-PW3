@@ -32,7 +32,6 @@ function newGame() {
     hide(gameTwoDiv);
 }
 
-// Function to start Game One and return a Promise
 function startPlayerGuessGame() {
     return new Promise((resolve, reject) => {
         computerGeneratedNumber = Math.floor(Math.random() * 100) + 1;
@@ -65,7 +64,6 @@ function treatPlayerInput() {
     }
 }
 
-// Function to start Game Two and return a Promise
 function startComputerGuessGame() {
     return new Promise((resolve, reject) => {
         displayGameTwo();
