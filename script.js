@@ -7,6 +7,7 @@ let gameTwoRestartButton;
 let minValue = 0;
 let maxValue = 100;
 let computerGuessNumber = (minValue + maxValue) / 2;
+let gameTwoMessageDiv;
 
 document.addEventListener("DOMContentLoaded", () =>{
     gameSelection = document.querySelector("#game_selection");
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     gameTwoDiv = document.getElementById("game2");
     gameOneRestartButton = document.getElementById("restart_button1");
     gameTwoRestartButton = document.getElementById("restart_button2");
+    gameTwoMessageDiv = document.getElementById("message2");
 })
 
 function show(element) {
@@ -70,7 +72,15 @@ function startComputerGuessGame(){
     displayGameTwo();
     hide(gameSelection);
     gameTwoRestartButton.style.display = "none";
+    gameTwoMessageDiv.innerText = "" + computerGuessNumber;
 }
+
+function computerGuess_isSmaller(){
+    minValue = computerGuessNumber;
+    computerGuessNumber = (minValue + maxValue) / 2;
+    gameTwoMessageDiv.innerText = "" + computerGuessNumber;
+}
+
 
 
 function main(){
@@ -83,6 +93,10 @@ function main(){
     let tryButton = document.getElementById("try_button");
     tryButton.addEventListener("click", treatPlayerInput);
     gameOneRestartButton.addEventListener("click", newGame);
+
+    //game two functionalities
+    let smallerButton = document.getElementById("smaller_button");
+    smallerButton.addEventListener("click", computerGuess_isSmaller)
 
     newGame();
 }
