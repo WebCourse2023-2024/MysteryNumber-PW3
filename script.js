@@ -1,22 +1,14 @@
 let computerGeneratedNumber = 0;
-let gameSelection;
-let gameOneDiv;
-let gameTwoDiv;
-let gameOneRestartButton;
-let gameTwoRestartButton;
 let minValue = 0;
 let maxValue = 100;
 let computerGuessNumber = (minValue + maxValue) / 2;
-let gameTwoMessageDiv;
+let gameSelection = document.querySelector("#game_selection");
+let gameOneDiv = document.getElementById("game1");
+let gameTwoDiv = document.getElementById("game2");
+let gameOneRestartButton = document.getElementById("restart_button1");
+let gameTwoRestartButton = document.getElementById("restart_button2");
+let gameTwoMessageDiv = document.getElementById("message2");
 
-document.addEventListener("DOMContentLoaded", () => {
-    gameSelection = document.querySelector("#game_selection");
-    gameOneDiv = document.getElementById("game1");
-    gameTwoDiv = document.getElementById("game2");
-    gameOneRestartButton = document.getElementById("restart_button1");
-    gameTwoRestartButton = document.getElementById("restart_button2");
-    gameTwoMessageDiv = document.getElementById("message2");
-});
 
 function show(element) {
     element.style.display = "";
@@ -35,8 +27,8 @@ function newGame() {
 function startPlayerGuessGame() {
     return new Promise((resolve, reject) => {
         computerGeneratedNumber = Math.floor(Math.random() * 100) + 1;
-        gameOneRestartButton.style.display = "none";
         displayGameOne();
+        hide(gameOneRestartButton);
         hide(gameSelection);
         resolve();
     });
