@@ -51,7 +51,7 @@ function treatPlayerInput() {
     } else {
         gameOneMessageDiv.style.color = "#00ff00";
         gameOneMessageDiv.innerText = "Congrats, You made the right guess " + computerGeneratedNumber;
-        gameOneRestartButton.style.display = "";
+        show(gameOneRestartButton);
         playerInputElement.value = "";
     }
 }
@@ -60,7 +60,7 @@ function startComputerGuessGame() {
     return new Promise((resolve, reject) => {
         displayGameTwo();
         hide(gameSelection);
-        gameTwoRestartButton.style.display = "none";
+        hide(gameTwoRestartButton);
         gameTwoMessageDiv.innerText = "" + computerGuessNumber;
         gameTwoMessageDiv.style.color = "white";
         resolve();
@@ -87,7 +87,7 @@ function computerGuess_isGreater() {
 function numberFound() {
     gameTwoMessageDiv.style.color = "#00ff00";
     gameTwoMessageDiv.innerText = "Congrats, You found " + computerGuessNumber;
-    gameTwoRestartButton.style.display = "";
+    show(gameTwoRestartButton);
 }
 
 function main() {
@@ -119,4 +119,4 @@ function main() {
     newGame();
 }
 
-document.addEventListener("DOMContentLoaded", main);
+main();
