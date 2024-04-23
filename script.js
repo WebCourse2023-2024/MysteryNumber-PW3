@@ -2,16 +2,16 @@ let computerGeneratedNumber = 0;
 let minValue = 0;
 let maxValue = 100;
 let computerGuessNumber = (minValue + maxValue) / 2;
-let gameSelection = document.querySelector("#game_selection");
-let gameOneDiv = document.getElementById("game1");
-let gameTwoDiv = document.getElementById("game2");
-let gameOneRestartButton = document.getElementById("restart_button1");
-let gameTwoRestartButton = document.getElementById("restart_button2");
-let gameTwoMessageDiv = document.getElementById("message2");
-let smallerButton = document.getElementById("smaller_button");
-let greaterButton = document.getElementById("bigger_button");
-let numberFoundButton = document.getElementById("found_button");
-let tryButton = document.getElementById("try_button");
+const gameSelection = document.querySelector("#game_selection");
+const gameOneDiv = document.getElementById("game1");
+const gameTwoDiv = document.getElementById("game2");
+const gameOneRestartButton = document.getElementById("restart_button1");
+const gameTwoRestartButton = document.getElementById("restart_button2");
+const gameTwoMessageDiv = document.getElementById("message2");
+const smallerButton = document.getElementById("smaller_button");
+const greaterButton = document.getElementById("bigger_button");
+const numberFoundButton = document.getElementById("found_button");
+const tryButton = document.getElementById("try_button");
 
 
 
@@ -49,9 +49,9 @@ function displayGameOne() {
 }
 
 function treatPlayerInput() {
-    let playerInputElement = document.getElementById("player_input");
-    let entryNumber = parseInt(playerInputElement.value);
-    let gameOneMessageDiv = document.getElementById("message1");
+    const playerInputElement = document.getElementById("player_input");
+    const entryNumber = parseInt(playerInputElement.value);
+    const gameOneMessageDiv = document.getElementById("message1");
 
     if (entryNumber < computerGeneratedNumber) {
         gameOneMessageDiv.innerText = "No, your guessed number is smaller";
@@ -104,12 +104,12 @@ function numberFound() {
 }
 
 function main() {
-    let chooseGameOneBtn = document.getElementById("start_game1");
+    const chooseGameOneBtn = document.getElementById("start_game1");
     chooseGameOneBtn.addEventListener("click", async () => {
         await startPlayerGuessGame();
     });
 
-    let chooseGameTwoBtn = document.getElementById("start_game2");
+    const chooseGameTwoBtn = document.getElementById("start_game2");
     chooseGameTwoBtn.addEventListener("click", async () => {
         await startComputerGuessGame();
     });
