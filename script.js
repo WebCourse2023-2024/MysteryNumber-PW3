@@ -8,6 +8,11 @@ let gameTwoDiv = document.getElementById("game2");
 let gameOneRestartButton = document.getElementById("restart_button1");
 let gameTwoRestartButton = document.getElementById("restart_button2");
 let gameTwoMessageDiv = document.getElementById("message2");
+let smallerButton = document.getElementById("smaller_button");
+let greaterButton = document.getElementById("bigger_button");
+let numberFoundButton = document.getElementById("found_button");
+let tryButton = document.getElementById("try_button");
+
 
 
 function show(element) {
@@ -16,6 +21,10 @@ function show(element) {
 
 function hide(element) {
     element.style.display = "none";
+}
+
+function disable(element) {
+    element.disabled = true
 }
 
 function newGame() {
@@ -51,6 +60,7 @@ function treatPlayerInput() {
     } else {
         gameOneMessageDiv.style.color = "#00ff00";
         gameOneMessageDiv.innerText = "Congrats, You made the right guess " + computerGeneratedNumber;
+        disable(tryButton);
         show(gameOneRestartButton);
         playerInputElement.value = "";
     }
@@ -87,6 +97,9 @@ function computerGuess_isGreater() {
 function numberFound() {
     gameTwoMessageDiv.style.color = "#00ff00";
     gameTwoMessageDiv.innerText = "Congrats, You found " + computerGuessNumber;
+    disable(greaterButton);
+    disable(smallerButton);
+    disable(numberFoundButton);
     show(gameTwoRestartButton);
 }
 
@@ -101,18 +114,12 @@ function main() {
         await startComputerGuessGame();
     });
 
-    let tryButton = document.getElementById("try_button");
     tryButton.addEventListener("click", treatPlayerInput);
     gameOneRestartButton.addEventListener("click", newGame);
 
     // Game Two functionalities
-    let smallerButton = document.getElementById("smaller_button");
     smallerButton.addEventListener("click", computerGuess_isSmaller);
-
-    let greaterButton = document.getElementById("bigger_button");
     greaterButton.addEventListener("click", computerGuess_isGreater);
-
-    let numberFoundButton = document.getElementById("found_button");
     numberFoundButton.addEventListener("click", numberFound);
     gameTwoRestartButton.addEventListener("click", newGame);
 
