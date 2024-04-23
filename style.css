@@ -1,7 +1,17 @@
 body {
+    padding: 0;
+    margin: 0;
     background-color: #121212;
     color: #ffffff;
     font-family: 'Arial', sans-serif;
+}
+
+.game_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
 }
 
 #game_selection, #game1, #game2 {
@@ -31,6 +41,6 @@ label {
 }
 
 #message1, #message2 {
-    color: #008080;
+    color: #FF0000;
     margin: 10px;
 }
