@@ -8,27 +8,29 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="game_selection">
-        <button id="start_game1">Play Game One</button>
-        <button id="start_game2">Play Game Two</button>
-    </div>
-
-    <div id="game1">
-        <label for="player_input">Enter your guess</label>
-        <div>
-            <input type="text" id="player_input">
-            <button id="try_button">Try number</button>
+    <div class="game_container">
+        <div id="game_selection">
+            <button id="start_game1">Play Game One</button>
+            <button id="start_game2">Play Game Two</button>
         </div>
-        <div id="message1"></div>
-        <button id="restart_button1">Restart</button>
-    </div>
 
-    <div id="game2">
-        <div id="message2" style="height: 30px;"></div>
-        <button id="smaller_button">Smaller</button>
-        <button id="bigger_button">Greater</button>
-        <button id="found_button">Number found</button>
-        <button id="restart_button2">Restart</button>
+        <div id="game1">
+            <label for="player_input">Enter your guess</label>
+            <div>
+                <input type="text" id="player_input">
+                <button id="try_button">Try number</button>
+            </div>
+            <div id="message1"></div>
+            <button id="restart_button1">Restart</button>
+        </div>
+
+        <div id="game2">
+            <div id="message2" style="height: 30px;"></div>
+            <button id="smaller_button">Smaller</button>
+            <button id="bigger_button">Greater</button>
+            <button id="found_button">Number found</button>
+            <button id="restart_button2">Restart</button>
+        </div>
     </div>
 </body>
 </html>
